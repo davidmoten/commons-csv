@@ -20,6 +20,7 @@ package org.apache.commons.csv;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -265,11 +266,15 @@ public final class CSVRecord implements Serializable, Iterable<String> {
      *         list.
      */
     public List<String> getHeaders() {
-        List<String> list = new ArrayList<String>(mapping.size());
-        for (Entry<String, Integer> entry : mapping.entrySet()) {
-            list.set(entry.getValue(), entry.getKey());
+        if (mapping == null) {
+            return Collections.emptyList();
+        } else {
+            String[] headers = new String[mapping.size()];
+            for (Entry<String, Integer> entry : mapping.entrySet()) {
+                headers[entry.getValue()] = entry.getKey();
+            }
+            return Arrays.asList(headers);
         }
-        return list;
     }
 
     /**

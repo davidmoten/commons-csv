@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -178,7 +179,24 @@ public class CSVRecordTest {
             assertTrue("Map is empty.", map.isEmpty());
         }
     }
+    
+    @Test
+    public void testGetHeaders() throws IOException {
+        try (final CSVParser parser = CSVParser.parse("z,a\r\n3,4", CSVFormat.newFormat(',').withFirstRecordAsHeader())) {
+            final CSVRecord rec = parser.iterator().next();
+            assertEquals(Arrays.asList("z", "a"), rec.getHeaders());
+        }
+    }
 
+    @Test
+    public void testGetHeadersWhenNonePresent() throws IOException {
+        try (final CSVParser parser = CSVParser.parse("z,a\r\n3,4", CSVFormat.newFormat(','))) {
+            final CSVRecord rec = parser.iterator().next();
+            assertTrue(rec.getHeaders().isEmpty());
+        }
+    }
+
+    
     private void validateMap(final Map<String, String> map, final boolean allowsNulls) {
         assertTrue(map.containsKey("first"));
         assertTrue(map.containsKey("second"));
