@@ -115,9 +115,9 @@ CSV files of various types.
   </contributors>
 
   <scm>
-    <connection>scm:git:http://git-wip-us.apache.org/repos/asf/commons-csv.git</connection>
-    <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/commons-csv.git</developerConnection>
-    <url>https://git-wip-us.apache.org/repos/asf?p=commons-csv.git</url>
+    <connection>scm:git:https://github.com/davidmoten/commons-csv.git</connection>
+    <developerConnection>scm:git:https://github.com/davidmoten/commons-csv.git</developerConnection>
+    <url>https://github.com/davidmoten/commons-csv.git</url>
     <tag>1.6.001</tag>
   </scm>
 
@@ -161,21 +161,7 @@ CSV files of various types.
 
   <build>
     <defaultGoal>clean verify apache-rat:check clirr:check javadoc:javadoc</defaultGoal>
-    <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>1.1</version>
-          <configuration>
-            <ignorePathsToDelete>
-              <ignorePathToDelete>archives/**</ignorePathToDelete>
-            </ignorePathsToDelete>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
