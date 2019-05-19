@@ -18,6 +18,7 @@
 package org.apache.commons.csv;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -254,6 +255,21 @@ public final class CSVRecord implements Serializable, Iterable<String> {
      */
     public Map<String, String> toMap() {
         return putIn(new HashMap<String, String>(values.length));
+    }
+    
+    /**
+     * If headers have been set returns the header names in column order otherwise
+     * returns an empty list.
+     *
+     * @return headers in column order if they have been set otherwise an empty
+     *         list.
+     */
+    public List<String> getHeaders() {
+        List<String> list = new ArrayList<String>(mapping.size());
+        for (Entry<String, Integer> entry : mapping.entrySet()) {
+            list.set(entry.getValue(), entry.getKey());
+        }
+        return list;
     }
 
     /**
