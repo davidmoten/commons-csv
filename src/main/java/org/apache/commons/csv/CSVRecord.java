@@ -266,7 +266,7 @@ public final class CSVRecord implements Serializable, Iterable<String> {
      *         list.
      */
     public List<String> getHeaders() {
-        if (mapping == null) {
+        if (mapping == null || mapping.isEmpty()) {
             return Collections.emptyList();
         } else {
             String[] headers = new String[mapping.size()];
