@@ -23,7 +23,7 @@
     <version>0.1</version>
   </parent>
   <artifactId>commons-csv</artifactId>
-  <version>1.7-SNAPSHOT</version>
+  <version>1.6.002</version>
   <name>Apache Commons CSV</name>
   <url>http://commons.apache.org/proper/commons-csv/</url>
   <description>
@@ -118,6 +118,7 @@ CSV files of various types.
     <connection>scm:git:https://github.com/davidmoten/commons-csv.git</connection>
     <developerConnection>scm:git:https://github.com/davidmoten/commons-csv.git</developerConnection>
     <url>https://github.com/davidmoten/commons-csv.git</url>
+    <tag>1.6.002</tag>
   </scm>
 
   <issueManagement>
@@ -478,7 +479,7 @@ CSV files of various types.
                   <executable>java</executable>
                   <arguments>
                     <argument>-classpath</argument>
-                    <classpath/>
+                    <classpath />
                     <argument>org.openjdk.jmh.Main</argument>
                     <argument>-rf</argument>
                     <argument>json</argument>
