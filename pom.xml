@@ -18,9 +18,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-parent</artifactId>
-    <version>48</version>
+    <groupId>com.github.davidmoten</groupId>
+    <artifactId>sonatype-parent</artifactId>
+    <version>0.1</version>
   </parent>
   <artifactId>commons-csv</artifactId>
   <version>1.7-SNAPSHOT</version>
@@ -115,9 +115,9 @@ CSV files of various types.
   </contributors>
 
   <scm>
-    <connection>scm:git:http://git-wip-us.apache.org/repos/asf/commons-csv.git</connection>
-    <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/commons-csv.git</developerConnection>
-    <url>https://git-wip-us.apache.org/repos/asf?p=commons-csv.git</url>
+    <connection>scm:git:https://github.com/davidmoten/commons-csv.git</connection>
+    <developerConnection>scm:git:https://github.com/davidmoten/commons-csv.git</developerConnection>
+    <url>https://github.com/davidmoten/commons-csv.git</url>
   </scm>
 
   <issueManagement>
@@ -160,20 +160,6 @@ CSV files of various types.
 
   <build>
     <defaultGoal>clean verify apache-rat:check clirr:check javadoc:javadoc</defaultGoal>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>1.1</version>
-          <configuration>
-            <ignorePathsToDelete>
-              <ignorePathToDelete>archives/**</ignorePathToDelete>
-            </ignorePathsToDelete>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
